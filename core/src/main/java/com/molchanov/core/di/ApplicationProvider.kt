@@ -1,4 +1,4 @@
 package com.molchanov.core.di
 
-interface ApplicationProvider {
-}
+interface ApplicationProvider:
+    AndroidDependenciesProvider
