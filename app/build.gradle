@@ -70,4 +70,6 @@ dependencies {
     implementation libs.dagger
     kapt libs.kapt.room.compiler
     kapt libs.kapt.dagger.compiler
+
+    implementation project(':core')
 }
