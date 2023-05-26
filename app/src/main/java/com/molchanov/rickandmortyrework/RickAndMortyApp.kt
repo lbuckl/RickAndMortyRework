@@ -1,7 +1,7 @@
 package com.molchanov.rickandmortyrework
 
 import android.app.Application
-import com.molchanov.core.App
+import com.molchanov.core.di.App
 import com.molchanov.core.di.ApplicationProvider
 import com.molchanov.rickandmortyrework.di.ApplicationComponent
 

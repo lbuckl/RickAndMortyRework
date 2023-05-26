@@ -1,4 +1,4 @@
-package com.molchanov.core.domain
+package com.molchanov.core.domain.network
 
 import retrofit2.Retrofit
 

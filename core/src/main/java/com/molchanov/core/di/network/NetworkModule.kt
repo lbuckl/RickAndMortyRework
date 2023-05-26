@@ -2,8 +2,8 @@ package com.molchanov.core.di.network
 
 import com.molchanov.core.data.network.NetworkStatus
 import com.molchanov.core.data.network.RickAndMortyRetrofitImpl
-import com.molchanov.core.domain.INetworkStatus
-import com.molchanov.core.domain.IRickAndMortyRetrofit
+import com.molchanov.core.domain.network.INetworkStatus
+import com.molchanov.core.domain.network.IRickAndMortyRetrofit
 import dagger.Binds
 import dagger.Module
 

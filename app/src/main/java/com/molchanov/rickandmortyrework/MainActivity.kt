@@ -1,9 +1,9 @@
 package com.molchanov.rickandmortyrework
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.molchanov.core.App
+import androidx.appcompat.app.AppCompatActivity
+import com.molchanov.core.di.App
 import com.molchanov.rickandmortyrework.di.MainActivityComponent
 
 class MainActivity : AppCompatActivity() {

@@ -1,6 +1,6 @@
 package com.molchanov.core.data.network
 
-import com.molchanov.core.domain.IRickAndMortyRetrofit
+import com.molchanov.core.domain.network.IRickAndMortyRetrofit
 
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -36,7 +36,6 @@ class RickAndMortyRetrofitImpl @Inject constructor(): IRickAndMortyRetrofit {
         return httpClient.build()
     }
 
-    //Перехватчик для отлавливания колбэков о результате загрузки
     class RMInterceptor : Interceptor {
         @Throws(IOException::class)
         override fun intercept(chain: Interceptor.Chain): okhttp3.Response {
