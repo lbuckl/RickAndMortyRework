@@ -37,8 +37,23 @@ dependencies {
     //core
     implementation libs.androidx.core
 
+    //retrofit
+    implementation libs.retrofit
+    implementation libs.retrofit.converter.gson
+    implementation libs.retrofit.adapter.rxjava3
+    implementation libs.retrofit.kotlin.coroutines.adapter
+    implementation libs.okhttp3.logging.interceptor
+
+    //RxJava
+    implementation libs.rxjava3.rxandroid
+    implementation libs.rxjava3.rxjava
+
+    //Room
+    implementation libs.room.runtime
+    kapt libs.kapt.room.compiler
+    implementation libs.room.rxjava3
+
     //Dagger2
     implementation libs.dagger
-    kapt libs.kapt.room.compiler
     kapt libs.kapt.dagger.compiler
 }
