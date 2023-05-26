@@ -75,4 +75,5 @@ dependencies {
     kapt libs.kapt.dagger.compiler
 
     implementation project(':core')
+    implementation project(':coreui')
 }

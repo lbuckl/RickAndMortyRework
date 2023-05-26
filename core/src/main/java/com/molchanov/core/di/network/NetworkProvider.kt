@@ -1,7 +1,7 @@
 package com.molchanov.core.di.network
 
-import retrofit2.Retrofit
+import com.molchanov.core.domain.network.IRickAndMortyRetrofit
 
 interface NetworkProvider {
-    fun provideRetrofit(): Retrofit
+    fun provideRetrofit(): IRickAndMortyRetrofit
 }

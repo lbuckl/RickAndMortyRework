@@ -1,0 +1,39 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.MolchanovRickAndMorty" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/yellow_bright</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/blue_dark</item>
+        <!-- Customize your theme here. -->
+        <item name="custom_bar_color">@color/blue_dark_secondary</item>
+        <item name="android:background">@color/blue_dark_secondary</item>
+        <item name="chipBackgroundColor">@color/yellow_light</item>
+        <item name="custom_rv_background_color">@color/blue_dark_secondary</item>
+        <item name="custom_rv_item_background_color">@color/blue_dark</item>
+        <item name="custom_text_color">@color/orange_bright</item>
+        <item name="custom_pagination_rv_item_background_color">@color/blue_dark</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="Theme.MolchanovSplash" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="android:windowFullscreen">true</item>
+    </style>
+</resources>
