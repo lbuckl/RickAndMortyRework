@@ -15,9 +15,6 @@ fun View.vision(flag: Int) {
     }
 }
 
-/**
- * Функция загрузки изображния по URL с помощью Glide
- */
 fun ImageView.loadImageFromUrl(url: Int) {
     Glide.with(context)
         .load(url)
@@ -25,9 +22,6 @@ fun ImageView.loadImageFromUrl(url: Int) {
         .into(this)
 }
 
-/**
- * Функция загрузки изображния по URL с помощью Glide
- */
 fun ImageView.loadImageFromUrl(url: String) {
     Glide.with(context)
         .load(url)

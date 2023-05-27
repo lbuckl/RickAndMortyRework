@@ -5,12 +5,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import javax.inject.Inject
 
-/**
- * Класс навигации по фрагментам
- * @fragmentRepId - id фрагмента или сслыка на контейнер
- * @fragment - фрагмент для замены
- * @tag - тэг под которым был сохранён фрагмент
- */
 class Router @Inject constructor() : IRouter {
 
     override fun addFragment(
