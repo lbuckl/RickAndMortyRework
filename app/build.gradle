@@ -76,4 +76,7 @@ dependencies {
 
     implementation project(':core')
     implementation project(':coreui')
+    implementation project(':feature_characters')
+    implementation project(':feature_episodes')
+    implementation project(':feature_locations')
 }
