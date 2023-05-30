@@ -21,3 +21,6 @@ rootProject.name = "RickAndMortyRework"
 include ':app'
 include ':core'
 include ':coreui'
+include ':feature_characters'
+include ':feature_episodes'
+include ':feature_locations'
