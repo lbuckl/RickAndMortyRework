@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="custom_bar_color" format="color"/>
+    <attr name="custom_rv_background_color" format="color"/>
+    <attr name="custom_rv_item_background_color" format="color"/>
+    <attr name="custom_text_color" format="color"/>
+    <attr name="custom_pagination_rv_item_background_color" format="color"/>
+</resources>

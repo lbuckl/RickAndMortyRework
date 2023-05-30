@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Main Activity. -->
+    <style name="HeaderStyle">
+        <item name="android:textSize">36sp</item>
+        <item name="android:textColor">@color/green_bright</item>
+    </style>
+
+    <style name="HeaderStyleLand">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">@color/green_dark</item>
+    </style>
+
+    <!-- General. -->
+    <style name="ErrorTextStyle">
+        <item name="android:textSize">40sp</item>
+        <item name="fontFamily">@font/font_text</item>
+        <item name="android:textColor">@color/red_bright</item>
+    </style>
+
+    <style name="ErrorReloadButtonStyle" parent="@style/Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textSize">32sp</item>
+        <item name="fontFamily">@font/font_text</item>
+    </style>
+
+
+    <!-- Characters. -->
+    <style name="Character_item_theme" parent="Theme.MolchanovRickAndMorty">
+        <item name="fontFamily">@font/font_text</item>
+        <item name="android:background">?attr/custom_rv_item_background_color</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">?attr/custom_text_color</item>
+    </style>
+
+    <style name="Character_details_item_theme" parent="Theme.MolchanovRickAndMorty">
+        <item name="fontFamily">@font/font_text</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">?attr/custom_text_color</item>
+    </style>
+
+    <!-- Episodes. -->
+    <style name="Episodes_item_theme" parent="Theme.MolchanovRickAndMorty">
+        <item name="fontFamily">@font/font_text</item>
+        <item name="android:background">?attr/custom_rv_item_background_color</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">?attr/custom_text_color</item>
+    </style>
+
+    <style name="Episode_details_item_theme" parent="Theme.MolchanovRickAndMorty">
+        <item name="fontFamily">@font/font_text</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">?attr/custom_text_color</item>
+    </style>
+
+    <!-- Locations. -->
+    <style name="Locations_item_theme" parent="Theme.MolchanovRickAndMorty">
+        <item name="fontFamily">@font/font_text</item>
+        <item name="android:background">?attr/custom_rv_item_background_color</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">?attr/custom_text_color</item>
+    </style>
+
+    <style name="Location_details_item_theme" parent="Theme.MolchanovRickAndMorty">
+        <item name="fontFamily">@font/font_text</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">?attr/custom_text_color</item>
+    </style>
+
+    <!-- Pagination. -->
+    <style name="Pagination_item_style" parent="Widget.AppCompat.TextView.SpinnerItem">
+        <item name="android:textSize">32sp</item>
+    </style>
+
+    <!-- Search/Filter dialog. -->
+    <style name="BaseSearchTextStyle" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textColor">@color/red_dark</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="FindButtonStyle" parent="@style/ThemeOverlay.Material3.Button.TextButton">
+        <item name="android:backgroundTint">@color/blue_dark</item>
+        <item name="android:textColor">@color/orange_light</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="BaseEditTextStyle">
+        <item name="android:background">@null</item>
+        <item name="android:imeOptions">actionNext</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:inputType">text</item>
+    </style>
+
+
+    <!-- Стиль для чипов. -->
+    <style name="FilterChipStyle" parent="@style/Widget.MaterialComponents.Chip.Choice">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="chipCornerRadius">10dp</item>
+    </style>
+
+    <style name="ChipHintStyle" parent="@style/TextAppearance.MaterialComponents.Headline1">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:backgroundTint">@color/white</item>
+    </style>
+</resources>
