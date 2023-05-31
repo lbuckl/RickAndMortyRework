@@ -1,12 +1,16 @@
 package com.molchanov.rickandmortyrework.di
 
 import com.molchanov.core.di.ApplicationProvider
+import com.molchanov.coreui.di.RouterModule
 import com.molchanov.rickandmortyrework.MainActivity
 import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
 @Component(
+    modules = [
+        RouterModule::class
+    ],
     dependencies = [
         ApplicationProvider::class,
     ]
