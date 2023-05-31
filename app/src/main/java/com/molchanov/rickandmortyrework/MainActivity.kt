@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.molchanov.core.di.App
 import com.molchanov.coreui.router.IRouter
+import com.molchanov.feature_characters.ui.CharactersFragment
 import com.molchanov.rickandmortyrework.base.BaseActivity
 import com.molchanov.rickandmortyrework.databinding.ActivityMainBinding
 import com.molchanov.rickandmortyrework.di.MainActivityComponent
@@ -62,6 +63,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     override fun addMainFragment() {
-        //TODO navigate to first fragment
+        navigateTo(
+            CharactersFragment.instance,
+            CharactersFragment.FRAGMENT_TAG
+        )
     }
 }

@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
 import com.bumptech.glide.Glide
+import com.molchanov.core.di.App
+import com.molchanov.core.di.ApplicationProvider
 import com.molchanov.coreui.router.IRouter
 import com.molchanov.coreui.viewmodel.AppState
 import com.molchanov.coreui.viewmodel.BaseViewModel
@@ -53,6 +55,8 @@ abstract class BaseVmFragment<T : ViewBinding, AS : AppState, VM : BaseViewModel
         savedInstanceState: Bundle?
     ): View? {
 
+        inject((requireActivity().application as App).getApplicationProvider())
+
         initBaseButtons()
 
         initLoading()
@@ -81,6 +85,8 @@ abstract class BaseVmFragment<T : ViewBinding, AS : AppState, VM : BaseViewModel
                 .into(this)
         }
     }
+
+    abstract fun inject(applicationProvider: ApplicationProvider)
 
     fun initBaseViewModel() {
 
