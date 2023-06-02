@@ -1,14 +1,18 @@
 package com.molchanov.feature_characters.ui
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
+import com.google.android.material.snackbar.Snackbar
 import com.molchanov.core.di.ApplicationProvider
 import com.molchanov.coreui.databinding.FragmentBaseVmBinding
 import com.molchanov.coreui.fragment.BaseVmFragment
+import com.molchanov.coreui.search.SearchDialogFragment
+import com.molchanov.coreui.utils.vision
+import com.molchanov.feature_characters.R
 import com.molchanov.feature_characters.di.CharactersComponent
+import com.molchanov.feature_characters.domain.Character
 
 
 class CharactersFragment :
@@ -24,7 +28,7 @@ class CharactersFragment :
         viewModelFactory
     }
 
-    /*private val onRVItemClickListener = object : CharactersRVAdapter.OnListItemClickListener {
+    private val onRVItemClickListener = object : CharactersRVAdapter.OnListItemClickListener {
         override fun onItemClick(data: Character) {
 
             viewModel.getDetailsInfo(data)
@@ -34,7 +38,7 @@ class CharactersFragment :
         }
     }
 
-    private val rvAdapter = CharactersRVAdapter(onRVItemClickListener)*/
+    private val rvAdapter = CharactersRVAdapter(onRVItemClickListener)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -50,16 +54,14 @@ class CharactersFragment :
 
     private fun initRvAdapters() {
 
-        /*binding.include.rvPagination.adapter = pagRvAdapter
+        binding.include.rvPagination.adapter = pagRvAdapter
 
         binding.rvBase.adapter = rvAdapter
 
-        binding.rvBase.layoutManager = GridLayoutManager(this.context, 2)*/
+        binding.rvBase.layoutManager = GridLayoutManager(this.context, 2)
     }
 
     private fun initViewModel() {
-
-        //viewModel = ViewModelProvider(this, vmFactory)[CharactersViewModel::class.java]
 
         viewModel.getMyLiveData().let {
             it.observe(viewLifecycleOwner) { state ->
@@ -67,9 +69,9 @@ class CharactersFragment :
             }
         }
 
-        /*viewModel.getLastSuccessStateValue()?.let {
+        viewModel.getLastSuccessStateValue()?.let {
             pagRvAdapter.replaceData(it.pageNum, it.pageActual)
-        }*/
+        }
     }
 
     private fun initButtons() {
@@ -107,7 +109,7 @@ class CharactersFragment :
 
     private fun initButtonSearch() {
 
-        /*binding.abBaseIcSearch.setOnClickListener {
+        binding.abBaseIcSearch.setOnClickListener {
             //Создаём диологовое окно
             val searchDialogFragment = SearchDialogFragment.instance
 
@@ -121,7 +123,7 @@ class CharactersFragment :
             })
             //отображаем диологовое окно
             searchDialogFragment.show(parentFragmentManager, SearchDialogFragment.FRAGMENT_TAG)
-        }*/
+        }
     }
 
     private fun initButtonFilter() {
@@ -147,7 +149,7 @@ class CharactersFragment :
 
     override fun renderData(state: CharactersAppState) {
 
-        /*when (state) {
+        when (state) {
             is CharactersAppState.Success -> {
 
                 binding.errorLayout.vision(View.GONE)
@@ -160,7 +162,7 @@ class CharactersFragment :
             }
             is CharactersAppState.SuccessCharacter -> {
 
-                successDetailsScenario()
+                /*successDetailsScenario()
 
                 val bundle = Bundle()
                 bundle.putParcelable(
@@ -179,7 +181,7 @@ class CharactersFragment :
                         CharacterDetailsFragment.instance,
                         CharacterDetailsFragment.FRAGMENT_TAG,
                         bundle
-                    )
+                    )*/
 
             }
             is CharactersAppState.Error -> {
@@ -188,14 +190,14 @@ class CharactersFragment :
 
                 Snackbar.make(binding.root, state.errorMsg, Snackbar.LENGTH_LONG)
                     .setAnchorView(binding.btnReload)
-                    .setTextColor(resources.getColor(R.color.black, requireContext().theme))
+                    .setTextColor(resources.getColor(com.molchanov.coreui.R.color.black, requireContext().theme))
                     .show()
             }
             is CharactersAppState.Loading -> {
 
                 loadingScenario(state.isLoading)
             }
-        }*/
+        }
     }
 
     override fun inject(applicationProvider: ApplicationProvider) {

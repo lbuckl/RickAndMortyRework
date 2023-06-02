@@ -5,6 +5,7 @@ import com.molchanov.coreui.viewmodel.BaseViewModel
 import com.molchanov.feature_characters.domain.CharacterPage
 import io.reactivex.rxjava3.disposables.Disposable
 import javax.inject.Inject
+import com.molchanov.feature_characters.domain.Character
 
 /**
  * ViewModel реализующая бизнес-логику:
