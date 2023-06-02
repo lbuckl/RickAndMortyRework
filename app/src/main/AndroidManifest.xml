@@ -32,7 +32,8 @@
 
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.MolchanovRickAndMorty">
 
             <meta-data
                 android:name="android.app.lib_name"

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.molchanov.core.di.ApplicationProvider
 import com.molchanov.coreui.databinding.FragmentBaseVmBinding
 import com.molchanov.coreui.fragment.BaseVmFragment
@@ -19,6 +20,10 @@ class CharactersFragment :
         const val FRAGMENT_TAG = "CharactersFragment_IdentificationTag"
     }
 
+    override val viewModel: CharactersViewModel by viewModels {
+        viewModelFactory
+    }
+
     /*private val onRVItemClickListener = object : CharactersRVAdapter.OnListItemClickListener {
         override fun onItemClick(data: Character) {
 
@@ -31,11 +36,8 @@ class CharactersFragment :
 
     private val rvAdapter = CharactersRVAdapter(onRVItemClickListener)*/
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         binding.abBaseTvHeader.text = resources.getString(com.molchanov.coreui.R.string.characters)
 
@@ -44,8 +46,6 @@ class CharactersFragment :
         initViewModel()
 
         initButtons()
-
-        return binding.root
     }
 
     private fun initRvAdapters() {
@@ -59,13 +59,15 @@ class CharactersFragment :
 
     private fun initViewModel() {
 
-        /*viewModel = ViewModelProvider(this, vmFactory)[CharactersViewModel::class.java]
+        //viewModel = ViewModelProvider(this, vmFactory)[CharactersViewModel::class.java]
 
-        App.app.getAppComponent().inject(viewModel)
+        viewModel.getMyLiveData().let {
+            it.observe(viewLifecycleOwner) { state ->
+                renderData(state)
+            }
+        }
 
-        initBaseViewModel()
-
-        viewModel.getLastSuccessStateValue()?.let {
+        /*viewModel.getLastSuccessStateValue()?.let {
             pagRvAdapter.replaceData(it.pageNum, it.pageActual)
         }*/
     }
