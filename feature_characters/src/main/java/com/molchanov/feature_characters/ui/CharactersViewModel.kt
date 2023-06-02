@@ -4,13 +4,14 @@ import com.molchanov.coreui.utils.APP_STATE_DELAY
 import com.molchanov.coreui.viewmodel.BaseViewModel
 import com.molchanov.feature_characters.domain.CharacterPage
 import io.reactivex.rxjava3.disposables.Disposable
+import javax.inject.Inject
 
 /**
  * ViewModel реализующая бизнес-логику:
  * - обращение к API и БД
  * - определение состояний для CharactersFragment
  */
-class CharactersViewModel : BaseViewModel<CharactersAppState>() {
+class CharactersViewModel @Inject constructor() : BaseViewModel<CharactersAppState>() {
 
     //Хранение последней запрашиваемой страницы
     private var lastPageActual = 1

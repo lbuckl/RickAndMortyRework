@@ -4,19 +4,24 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.molchanov.core.di.ApplicationProvider
 import com.molchanov.coreui.databinding.FragmentBaseVmBinding
 import com.molchanov.coreui.fragment.BaseVmFragment
 import com.molchanov.feature_characters.di.CharactersComponent
 
 
-class CharactersFragment :
+class CharactersFragment() :
     BaseVmFragment<FragmentBaseVmBinding, CharactersAppState, CharactersViewModel>() {
 
     companion object {
         val instance = CharactersFragment()
 
         const val FRAGMENT_TAG = "CharactersFragment_IdentificationTag"
+    }
+
+    override val viewModel: CharactersViewModel by viewModels {
+        viewModelFactory
     }
 
     /*private val onRVItemClickListener = object : CharactersRVAdapter.OnListItemClickListener {
@@ -59,15 +64,14 @@ class CharactersFragment :
 
     private fun initViewModel() {
 
-        /*viewModel = ViewModelProvider(this, vmFactory)[CharactersViewModel::class.java]
+        //viewModel = ViewModelProvider(this, vmFactory)[CharactersViewModel::class.java]
 
-        App.app.getAppComponent().inject(viewModel)
 
         initBaseViewModel()
 
         viewModel.getLastSuccessStateValue()?.let {
             pagRvAdapter.replaceData(it.pageNum, it.pageActual)
-        }*/
+        }
     }
 
     private fun initButtons() {

@@ -2,8 +2,6 @@ package com.molchanov.feature_characters.di
 
 import com.molchanov.core.di.ApplicationProvider
 import com.molchanov.coreui.di.RouterModule
-import com.molchanov.coreui.di.VMFactoryModule
-import com.molchanov.coreui.fragment.BaseVmFragment
 import com.molchanov.feature_characters.ui.CharactersFragment
 import dagger.Component
 
@@ -13,7 +11,7 @@ import dagger.Component
     ],
     modules = [
         RouterModule::class,
-        VMFactoryModule::class
+        CharactersViewModelModule::class
     ]
 )
 interface CharactersComponent {
@@ -23,7 +21,8 @@ interface CharactersComponent {
         fun init(
             applicationProvider: ApplicationProvider
         ): CharactersComponent {
-            return DaggerCharactersComponent.factory().create(applicationProvider)
+            return DaggerCharactersComponent.factory()
+                .create(applicationProvider)
         }
     }
 

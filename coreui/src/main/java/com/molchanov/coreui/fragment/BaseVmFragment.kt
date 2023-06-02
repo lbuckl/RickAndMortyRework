@@ -4,19 +4,19 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
 import com.bumptech.glide.Glide
+import com.molchanov.core.data.viewmodel.ViewModelFactory
 import com.molchanov.core.di.App
 import com.molchanov.core.di.ApplicationProvider
-import com.molchanov.coreui.router.IRouter
-import com.molchanov.coreui.viewmodel.AppState
-import com.molchanov.coreui.viewmodel.BaseViewModel
 import com.molchanov.coreui.R
 import com.molchanov.coreui.databinding.FragmentBaseVmBinding
 import com.molchanov.coreui.pagination.PaginationRVAdapter
+import com.molchanov.coreui.router.IRouter
 import com.molchanov.coreui.utils.PROGRESS_DELAY
 import com.molchanov.coreui.utils.vision
+import com.molchanov.coreui.viewmodel.AppState
+import com.molchanov.coreui.viewmodel.BaseViewModel
 import javax.inject.Inject
 
 /**
@@ -29,9 +29,9 @@ abstract class BaseVmFragment<T : ViewBinding, AS : AppState, VM : BaseViewModel
     lateinit var router: IRouter
 
     @Inject
-    lateinit var vmFactory: ViewModelProvider.NewInstanceFactory
+    lateinit var viewModelFactory: ViewModelFactory
 
-    lateinit var viewModel: VM
+    abstract val viewModel: VM
 
     var localLoading = false
 
