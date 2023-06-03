@@ -1,6 +1,6 @@
 package com.molchanov.feature_characters.ui
 
-import com.molchanov.coreui.viewmodel.AppState
+import com.molchanov.core.domain.viewmodel.AppState
 import com.molchanov.feature_characters.domain.CharacterPage
 import com.molchanov.feature_characters.domain.Character
 

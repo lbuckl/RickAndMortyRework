@@ -3,6 +3,7 @@ package com.molchanov.coreui.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.molchanov.core.domain.viewmodel.AppState
 
 /**
  * Базовый класс для всех ViewModel работающих с RxJava

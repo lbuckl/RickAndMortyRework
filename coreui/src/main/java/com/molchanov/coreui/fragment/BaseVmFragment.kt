@@ -15,9 +15,9 @@ import com.molchanov.coreui.pagination.PaginationRVAdapter
 import com.molchanov.coreui.router.IRouter
 import com.molchanov.coreui.utils.PROGRESS_DELAY
 import com.molchanov.coreui.utils.vision
-import com.molchanov.coreui.viewmodel.AppState
 import com.molchanov.coreui.viewmodel.BaseViewModel
 import javax.inject.Inject
+import com.molchanov.core.domain.viewmodel.AppState
 
 /**
  * Базовый класс для фрагментов с ViewModel
