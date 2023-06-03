@@ -18,7 +18,7 @@ class RickAndMortyRetrofitImpl @Inject constructor(): IRickAndMortyRetrofit {
 
     private val baseUrl = "https://rickandmortyapi.com"
 
-    override fun getRickAndMortyRetrofitBuilder(): Retrofit {
+    override fun getRickAndMortyRetrofit(): Retrofit {
         return Retrofit.Builder()
             .baseUrl(baseUrl)
             .addConverterFactory(GsonConverterFactory.create())

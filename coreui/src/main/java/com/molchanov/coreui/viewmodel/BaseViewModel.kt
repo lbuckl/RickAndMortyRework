@@ -3,13 +3,14 @@ package com.molchanov.coreui.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.molchanov.core.domain.viewmodel.AppState
 
 /**
  * Базовый класс для всех ViewModel работающих с RxJava
  */
-abstract class BaseViewModel<V : AppState>(
-    val liveData: MutableLiveData<V> = MutableLiveData<V>()
-) : ViewModel() {
+abstract class BaseViewModel<V : AppState>() : ViewModel() {
+
+    protected val liveData: MutableLiveData<V> = MutableLiveData<V>()
 
     private val outLiveData: LiveData<V> by lazy {
         liveData

@@ -30,12 +30,28 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
 
     //core
     implementation libs.androidx.core
+
+    //UI
+    implementation libs.androidx.appcompat
+    implementation libs.androidx.constraintlayout
+    implementation libs.android.material
+    implementation libs.fragment.ktx
+
+    //retrofit
+    implementation libs.retrofit
+    implementation libs.retrofit.converter.gson
+    implementation libs.retrofit.adapter.rxjava3
+    implementation libs.retrofit.kotlin.coroutines.adapter
+    implementation libs.okhttp3.logging.interceptor
 
     //RxJava
     implementation libs.rxjava3.rxandroid
@@ -49,4 +65,7 @@ dependencies {
     //Dagger2
     implementation libs.dagger
     kapt libs.kapt.dagger.compiler
+
+    implementation project(':core')
+    implementation project(':coreui')
 }

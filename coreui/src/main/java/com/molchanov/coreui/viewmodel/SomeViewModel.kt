@@ -1,4 +1,5 @@
-package com.molchanov.coreui.viewmodel
+import com.molchanov.core.domain.viewmodel.AppState
+import com.molchanov.coreui.viewmodel.BaseViewModel
 
 class SomeViewModel : BaseViewModel<AppState>() {
     override fun getData(page: Int) {

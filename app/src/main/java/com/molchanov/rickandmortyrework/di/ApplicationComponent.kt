@@ -5,6 +5,7 @@ import com.molchanov.core.di.ApplicationProvider
 import com.molchanov.core.di.android.AndroidDependenciesComponent
 import com.molchanov.core.di.network.NetworkComponent
 import com.molchanov.core.di.network.NetworkProvider
+import com.molchanov.core.di.viewmodel.ViewModelFactoryModule
 import com.molchanov.rickandmortyrework.RickAndMortyApp
 import dagger.Component
 
@@ -14,6 +15,7 @@ import dagger.Component
         NetworkProvider::class
     ],
     modules = [
+        ViewModelFactoryModule::class,
         ApplicationModule::class
     ]
 )

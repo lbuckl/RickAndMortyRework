@@ -2,6 +2,7 @@ package com.molchanov.core.di.android
 
 import android.app.Application
 import android.content.Context
+import android.content.res.Resources
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -17,5 +18,9 @@ class AndroidDependenciesModule (
 
     @Singleton
     @Provides
-    fun provideApplicationContext(): Context = application
+    fun provideApplicationContext(): Context = application.applicationContext
+
+    @Singleton
+    @Provides
+    fun provideResources(context: Context): Resources = context.resources
 }
