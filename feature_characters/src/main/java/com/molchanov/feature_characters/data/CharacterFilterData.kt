@@ -1,8 +1,9 @@
 package com.molchanov.feature_characters.data
 
 import com.molchanov.core.domain.filter.BaseFilterData
+import javax.inject.Inject
 
-data class CharacterFilterData(
+data class CharacterFilterData @Inject constructor(
     val name: String?,
     val status: String?,
     val species: String?,

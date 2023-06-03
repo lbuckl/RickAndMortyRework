@@ -46,6 +46,13 @@ dependencies {
     implementation libs.android.material
     implementation libs.fragment.ktx
 
+    //retrofit
+    implementation libs.retrofit
+    implementation libs.retrofit.converter.gson
+    implementation libs.retrofit.adapter.rxjava3
+    implementation libs.retrofit.kotlin.coroutines.adapter
+    implementation libs.okhttp3.logging.interceptor
+
     //RxJava
     implementation libs.rxjava3.rxandroid
     implementation libs.rxjava3.rxjava

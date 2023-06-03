@@ -13,6 +13,6 @@ interface NetworkModule {
     @Binds
     fun bindRetrofit(retrofit: RickAndMortyRetrofitImpl): IRickAndMortyRetrofit
 
-    @Binds
-    fun bindNetworkStatus(networkStatus: NetworkStatus): INetworkStatus
+    //@Binds
+    //fun bindNetworkStatus(networkStatus: NetworkStatus): INetworkStatus
 }

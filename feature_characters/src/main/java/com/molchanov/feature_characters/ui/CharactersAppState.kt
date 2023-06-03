@@ -4,7 +4,7 @@ import com.molchanov.core.domain.viewmodel.AppState
 import com.molchanov.feature_characters.domain.CharacterPage
 import com.molchanov.feature_characters.domain.Character
 
-sealed class CharactersAppState : AppState() {
+sealed class CharactersAppState: AppState() {
 
     //Состояния страницы
     data class Loading(val isLoading: Boolean) : CharactersAppState()

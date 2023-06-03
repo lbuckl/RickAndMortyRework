@@ -1,18 +1,23 @@
 package com.molchanov.feature_characters.ui
 
+import com.molchanov.core.domain.repository.IRepository
 import com.molchanov.coreui.utils.APP_STATE_DELAY
 import com.molchanov.coreui.viewmodel.BaseViewModel
+import com.molchanov.feature_characters.data.CharacterFilterData
 import com.molchanov.feature_characters.domain.CharacterPage
 import io.reactivex.rxjava3.disposables.Disposable
 import javax.inject.Inject
 import com.molchanov.feature_characters.domain.Character
+import io.reactivex.rxjava3.schedulers.Schedulers
 
 /**
  * ViewModel реализующая бизнес-логику:
  * - обращение к API и БД
  * - определение состояний для CharactersFragment
  */
-class CharactersViewModel @Inject constructor() : BaseViewModel<CharactersAppState>() {
+class CharactersViewModel @Inject constructor(
+    private val repo: IRepository<CharactersAppState, CharacterFilterData>
+) : BaseViewModel<CharactersAppState>() {
 
     //Хранение последней запрашиваемой страницы
     private var lastPageActual = 1
@@ -35,7 +40,7 @@ class CharactersViewModel @Inject constructor() : BaseViewModel<CharactersAppSta
 
         lastPageActual = page
 
-        /*disposable = repo.getData(page)
+        disposable = repo.getData(page)
             .subscribeOn(Schedulers.io())
             .subscribe(
                 {
@@ -44,7 +49,7 @@ class CharactersViewModel @Inject constructor() : BaseViewModel<CharactersAppSta
                 {
                     endLoading(CharactersAppState.Error("No data in DataBase"))
                 }
-            )*/
+            )
     }
 
     //Запрос с поиском по слову

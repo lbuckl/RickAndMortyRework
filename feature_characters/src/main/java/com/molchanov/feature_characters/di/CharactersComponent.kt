@@ -1,6 +1,8 @@
 package com.molchanov.feature_characters.di
 
 import com.molchanov.core.di.ApplicationProvider
+import com.molchanov.core.di.network.NetworkModule
+import com.molchanov.core.di.network.NetworkProvider
 import com.molchanov.coreui.di.RouterModule
 import com.molchanov.feature_characters.ui.CharactersFragment
 import dagger.Component
@@ -11,7 +13,9 @@ import dagger.Component
     ],
     modules = [
         RouterModule::class,
-        CharactersViewModelModule::class
+        CharactersViewModelModule::class,
+        CharactersApiModule::class,
+        CharactersRepositoryModule::class
     ]
 )
 interface CharactersComponent {
