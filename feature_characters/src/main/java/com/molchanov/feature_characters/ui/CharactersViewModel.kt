@@ -4,33 +4,21 @@ import com.molchanov.core.domain.repository.IRepository
 import com.molchanov.coreui.utils.APP_STATE_DELAY
 import com.molchanov.coreui.viewmodel.BaseViewModel
 import com.molchanov.feature_characters.data.CharacterFilterData
+import com.molchanov.feature_characters.domain.Character
 import com.molchanov.feature_characters.domain.CharacterPage
 import io.reactivex.rxjava3.disposables.Disposable
-import javax.inject.Inject
-import com.molchanov.feature_characters.domain.Character
 import io.reactivex.rxjava3.schedulers.Schedulers
+import javax.inject.Inject
 
-/**
- * ViewModel реализующая бизнес-логику:
- * - обращение к API и БД
- * - определение состояний для CharactersFragment
- */
 class CharactersViewModel @Inject constructor(
     private val repo: IRepository<CharactersAppState, CharacterFilterData>
 ) : BaseViewModel<CharactersAppState>() {
 
-    //Хранение последней запрашиваемой страницы
     private var lastPageActual = 1
 
-    //Хранение последнего удачного запроса
     private var lastSuccessState: CharacterPage? = null
 
     fun getLastSuccessStateValue(): CharacterPage? = lastSuccessState
-
-    //region инициализация переменных
-    /*@Inject
-    @CharacterRepository
-    lateinit var repo: IRepository<CharactersAppState, CharacterFilterData>*/
 
     private var disposable: Disposable = Disposable.empty()
 

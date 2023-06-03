@@ -1,11 +1,9 @@
 package com.molchanov.feature_characters.data
 
-import com.molchanov.core.domain.network.INetworkStatus
 import com.molchanov.core.domain.repository.IRepository
-import com.molchanov.core.domain.repository.requests.ILocalRequest
+import com.molchanov.core.domain.repository.requests.IRemoteRequest
 import com.molchanov.feature_characters.domain.CharacterPage
 import com.molchanov.feature_characters.ui.CharactersAppState
-import com.molchanov.core.domain.repository.requests.IRemoteRequest
 import io.reactivex.rxjava3.core.Single
 import io.reactivex.rxjava3.schedulers.Schedulers
 import javax.inject.Inject

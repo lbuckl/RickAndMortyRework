@@ -43,6 +43,4 @@ interface ApplicationComponent: ApplicationProvider {
             networkProvider: NetworkProvider
         ): ApplicationComponent
     }
-
-    fun inject(app: RickAndMortyApp)
 }

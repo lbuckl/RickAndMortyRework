@@ -10,7 +10,6 @@ import com.molchanov.coreui.databinding.FragmentBaseVmBinding
 import com.molchanov.coreui.fragment.BaseVmFragment
 import com.molchanov.coreui.search.SearchDialogFragment
 import com.molchanov.coreui.utils.vision
-import com.molchanov.feature_characters.R
 import com.molchanov.feature_characters.di.CharactersComponent
 import com.molchanov.feature_characters.domain.Character
 

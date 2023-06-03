@@ -9,6 +9,7 @@ import com.bumptech.glide.Glide
 import com.molchanov.core.data.viewmodel.ViewModelFactory
 import com.molchanov.core.di.App
 import com.molchanov.core.di.ApplicationProvider
+import com.molchanov.core.domain.viewmodel.AppState
 import com.molchanov.coreui.R
 import com.molchanov.coreui.databinding.FragmentBaseVmBinding
 import com.molchanov.coreui.pagination.PaginationRVAdapter
@@ -17,7 +18,6 @@ import com.molchanov.coreui.utils.PROGRESS_DELAY
 import com.molchanov.coreui.utils.vision
 import com.molchanov.coreui.viewmodel.BaseViewModel
 import javax.inject.Inject
-import com.molchanov.core.domain.viewmodel.AppState
 
 /**
  * Базовый класс для фрагментов с ViewModel
