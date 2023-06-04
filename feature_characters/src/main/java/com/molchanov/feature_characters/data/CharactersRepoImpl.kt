@@ -66,8 +66,8 @@ class CharactersRepoImpl @Inject constructor(
 
     override fun getSearchedData(page: Int, searchWord: String): Single<CharactersAppState> {
 
-        /*return when (networkStatusResult) {
-            true -> {*/
+        return when (networkStatusResult) {
+            true -> {
 
                 return repoRemote.getSearchedData(lastPageActual, searchWord)
                     .subscribeOn(Schedulers.io())
@@ -79,13 +79,12 @@ class CharactersRepoImpl @Inject constructor(
                     .doOnError {
                         //reserveSearchRequest(searchWord)
                     }
-            /*}
+            }
             else -> reserveSearchRequest(searchWord)
-        }*/
+        }
     }
 
-    //Резервный запрос в БД с поиском по слову
-    /*private fun reserveSearchRequest(searchWord: String): Single<CharactersAppState> {
+    private fun reserveSearchRequest(searchWord: String): Single<CharactersAppState> {
 
         return repoLocal.getSearchedData(lastPageActual, searchWord)
             .subscribeOn(Schedulers.io())
@@ -94,12 +93,12 @@ class CharactersRepoImpl @Inject constructor(
                     emmiter.onSuccess(CharactersAppState.Success(it))
                 }
             }
-    }*/
+    }
 
     override fun getFilteredData(filter: CharacterFilterData): Single<CharactersAppState> {
 
-        /*return when (networkStatusResult) {
-            true -> {*/
+        return when (networkStatusResult) {
+            true -> {
                 return repoRemote.getFilteredData(lastPageActual, filter)
                     .subscribeOn(Schedulers.io())
                     .flatMap {
@@ -110,15 +109,14 @@ class CharactersRepoImpl @Inject constructor(
                     .doOnError {
                         //reserveFilteredRequest(filter)
                     }
-            /*}
+            }
             else -> {
                 reserveFilteredRequest(filter)
             }
-        }*/
+        }
     }
 
-    //Резервный запрос в БД с фильтрацией по признакам
-    /*private fun reserveFilteredRequest(data: CharacterFilterData): Single<CharactersAppState> {
+    private fun reserveFilteredRequest(data: CharacterFilterData): Single<CharactersAppState> {
         return repoLocal.getFilteredData(lastPageActual, data)
             .subscribeOn(Schedulers.io())
             .flatMap {
@@ -126,5 +124,5 @@ class CharactersRepoImpl @Inject constructor(
                     emmiter.onSuccess(CharactersAppState.Success(it))
                 }
             }
-    }*/
+    }
 }

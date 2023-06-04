@@ -18,7 +18,8 @@ import javax.inject.Inject
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 
-    @Inject lateinit var router: IRouter
+    @Inject
+    lateinit var router: IRouter
 
     @Inject
     lateinit var networkStatus: INetworkStatus
