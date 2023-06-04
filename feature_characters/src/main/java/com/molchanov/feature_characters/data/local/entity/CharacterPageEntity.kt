@@ -4,9 +4,6 @@ import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
-/**
- * Классы для харения данных в БД Room
- */
 @Entity(tableName = "CharacterPageTab")
 data class CharacterPageEntity(
     @PrimaryKey

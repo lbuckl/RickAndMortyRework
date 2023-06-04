@@ -24,7 +24,6 @@ class CharacterRepoLocalImpl @Inject constructor(
             }
     }
 
-    //Функция запрашивает данные и мапит только те данные, которые ищет пользователь
     override fun getSearchedData(requestData: Int, searchWord: String): Single<CharacterPage> {
         return dbExist.getCharacterEpisodeDB().getDAO().queryPageAndEpisodes(requestData)
             .map { data ->
@@ -32,7 +31,6 @@ class CharacterRepoLocalImpl @Inject constructor(
             }
     }
 
-    //Функция запрашивает данные по фильтру
     override fun getFilteredData(
         requestData: Int,
         filter: CharacterFilterData
@@ -50,7 +48,7 @@ class CharacterRepoLocalImpl @Inject constructor(
         }
     }
 
-    //Сохранение данных в БД Room
+
     override fun saveData(data: CharacterPage, key: Int) {
 
         //Реализовано сохранение для связного списка

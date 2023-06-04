@@ -18,7 +18,6 @@ class CharactersRepoImpl @Inject constructor(
 
     private var networkStatusResult: Boolean? = null
 
-    //Хранение последней запрашиваемой страницы
     private var lastPageActual = 1
 
     init {
