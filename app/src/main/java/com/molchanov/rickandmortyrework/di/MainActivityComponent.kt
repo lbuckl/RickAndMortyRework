@@ -1,6 +1,7 @@
 package com.molchanov.rickandmortyrework.di
 
 import com.molchanov.core.di.ApplicationProvider
+import com.molchanov.core.di.network.NetworkStatusModule
 import com.molchanov.coreui.di.RouterModule
 import com.molchanov.rickandmortyrework.MainActivity
 import dagger.Component
@@ -9,7 +10,8 @@ import javax.inject.Singleton
 @Singleton
 @Component(
     modules = [
-        RouterModule::class
+        RouterModule::class,
+        NetworkStatusModule::class
     ],
     dependencies = [
         ApplicationProvider::class,
