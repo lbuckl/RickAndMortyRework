@@ -1,6 +1,7 @@
 package com.molchanov.feature_characters.data
 
 import com.molchanov.core.domain.repository.IRepository
+import com.molchanov.core.domain.repository.requests.ILocalRequest
 import com.molchanov.core.domain.repository.requests.IRemoteRequest
 import com.molchanov.feature_characters.domain.CharacterPage
 import com.molchanov.feature_characters.ui.CharactersAppState
@@ -10,7 +11,7 @@ import javax.inject.Inject
 
 class CharactersRepoImpl @Inject constructor(
     private val repoRemote: IRemoteRequest<Int, String, CharacterFilterData, CharacterPage>,
-    //private val repoLocal: ILocalRequest<Int, CharacterFilterData, String, CharacterPage>,
+    private val repoLocal: ILocalRequest<Int, CharacterFilterData, String, CharacterPage>,
     //networkStatus: INetworkStatus
 ) : IRepository<CharactersAppState, CharacterFilterData> {
 
@@ -34,27 +35,26 @@ class CharactersRepoImpl @Inject constructor(
 
         lastPageActual = page
 
-        /*return when (networkStatusResult) {
-            true -> {*/
+        return when (networkStatusResult) {
+            true -> {
                 return repoRemote.getData(page)
                     .subscribeOn(Schedulers.io())
                     .flatMap {
-                        //repoLocal.saveData(it, page)
+                        repoLocal.saveData(it, page)
 
                         Single.create<CharactersAppState> { emmiter ->
                             emmiter.onSuccess(CharactersAppState.Success(it))
                         }
                     }
                     .doOnError {
-                        //reserveGetRequest(page)
+                        reserveGetRequest(page)
                     }
-            /*}
+            }
             else -> reserveGetRequest(page)
-        }*/
+        }
     }
 
-    //Резервный постраничный запрос в БД
-    /*private fun reserveGetRequest(page: Int): Single<CharactersAppState> {
+    private fun reserveGetRequest(page: Int): Single<CharactersAppState> {
         return repoLocal.getData(page)
             .subscribeOn(Schedulers.io())
             .flatMap {
@@ -62,7 +62,7 @@ class CharactersRepoImpl @Inject constructor(
                     emmiter.onSuccess(CharactersAppState.Success(it))
                 }
             }
-    }*/
+    }
 
     override fun getSearchedData(page: Int, searchWord: String): Single<CharactersAppState> {
 
