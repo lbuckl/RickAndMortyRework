@@ -1,6 +1,7 @@
 package com.molchanov.feature_characters.di
 
 import com.molchanov.core.di.ApplicationProvider
+import com.molchanov.core.di.network.NetworkStatusModule
 import com.molchanov.coreui.di.RouterModule
 import com.molchanov.feature_characters.ui.CharactersFragment
 import dagger.Component
@@ -13,13 +14,13 @@ import dagger.Component
         RouterModule::class,
         CharactersViewModelModule::class,
         CharactersApiModule::class,
-        CharactersRepositoryModule::class
+        CharactersRepositoryModule::class,
+        NetworkStatusModule::class
     ]
 )
 interface CharactersComponent {
 
     companion object {
-
         fun init(
             applicationProvider: ApplicationProvider
         ): CharactersComponent {
@@ -30,7 +31,6 @@ interface CharactersComponent {
 
     @Component.Factory
     interface Factory {
-
         fun create(
             applicationProvider: ApplicationProvider
         ): CharactersComponent

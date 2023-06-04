@@ -1,5 +1,6 @@
 package com.molchanov.feature_characters.data
 
+import com.molchanov.core.domain.network.INetworkStatus
 import com.molchanov.core.domain.repository.IRepository
 import com.molchanov.core.domain.repository.requests.ILocalRequest
 import com.molchanov.core.domain.repository.requests.IRemoteRequest
@@ -12,7 +13,7 @@ import javax.inject.Inject
 class CharactersRepoImpl @Inject constructor(
     private val repoRemote: IRemoteRequest<Int, String, CharacterFilterData, CharacterPage>,
     private val repoLocal: ILocalRequest<Int, CharacterFilterData, String, CharacterPage>,
-    //networkStatus: INetworkStatus
+    networkStatus: INetworkStatus
 ) : IRepository<CharactersAppState, CharacterFilterData> {
 
     private var networkStatusResult: Boolean? = null
@@ -20,7 +21,7 @@ class CharactersRepoImpl @Inject constructor(
     //Хранение последней запрашиваемой страницы
     private var lastPageActual = 1
 
-    /*init {
+    init {
         networkStatus.isOnline().subscribe(
             {
                 networkStatusResult = it
@@ -29,7 +30,7 @@ class CharactersRepoImpl @Inject constructor(
                 networkStatusResult = null
             }
         )
-    }*/
+    }
 
     override fun getData(page: Int): Single<CharactersAppState> {
 
