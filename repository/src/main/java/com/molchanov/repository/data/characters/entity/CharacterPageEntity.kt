@@ -1,4 +1,4 @@
-package com.molchanov.feature_characters.data.local.entity
+package com.molchanov.repository.data.characters.entity
 
 import androidx.room.Entity
 import androidx.room.ForeignKey

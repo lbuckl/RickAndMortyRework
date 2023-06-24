@@ -28,6 +28,4 @@ abstract class BaseViewModel<V : AppState>() : ViewModel() {
 
         return outLiveData
     }
-
-
 }

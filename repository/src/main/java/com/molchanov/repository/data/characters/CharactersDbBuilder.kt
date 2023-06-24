@@ -1,4 +1,4 @@
-package com.molchanov.feature_characters.data.local
+package com.molchanov.repository.data.characters
 
 import android.content.Context
 import androidx.room.Room

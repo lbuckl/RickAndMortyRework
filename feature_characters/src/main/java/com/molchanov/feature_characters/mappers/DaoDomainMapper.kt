@@ -1,17 +1,17 @@
 package com.molchanov.feature_characters.mappers
 
 import com.molchanov.core.utils.findWordInText
-import com.molchanov.feature_characters.data.local.entity.CharacterDetailsEntity
-import com.molchanov.feature_characters.data.local.entity.CharacterPageAndDetails
-import com.molchanov.feature_characters.data.local.entity.CharacterPageEntity
 import com.molchanov.feature_characters.domain.Character
 import com.molchanov.feature_characters.domain.CharacterPage
+import com.molchanov.repository.data.characters.entity.CharacterDetailsEntity
+import com.molchanov.repository.data.characters.entity.CharacterPageAndDetails
+import com.molchanov.repository.data.characters.entity.CharacterPageEntity
 import javax.inject.Inject
 
 class DaoDomainMapper @Inject constructor() {
 
     fun characterDomainToDao(
-        character: com.molchanov.feature_characters.domain.Character,
+        character: Character,
         pageActual: Int,
         pages: Int
     ): CharacterPageEntity =

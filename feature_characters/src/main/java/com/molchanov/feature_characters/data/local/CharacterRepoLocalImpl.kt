@@ -5,6 +5,7 @@ import com.molchanov.feature_characters.data.CharacterFilterData
 import com.molchanov.feature_characters.data.getRoomFormat
 import com.molchanov.feature_characters.domain.CharacterPage
 import com.molchanov.feature_characters.mappers.DaoDomainMapper
+import com.molchanov.repository.data.characters.CharactersDbBuilder
 import io.reactivex.rxjava3.core.Single
 import javax.inject.Inject
 

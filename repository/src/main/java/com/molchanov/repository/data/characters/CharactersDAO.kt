@@ -1,9 +1,9 @@
-package com.molchanov.feature_characters.data.local
+package com.molchanov.repository.data.characters
 
 import androidx.room.*
-import com.molchanov.feature_characters.data.local.entity.CharacterDetailsEntity
-import com.molchanov.feature_characters.data.local.entity.CharacterPageAndDetails
-import com.molchanov.feature_characters.data.local.entity.CharacterPageEntity
+import com.molchanov.repository.data.characters.entity.CharacterDetailsEntity
+import com.molchanov.repository.data.characters.entity.CharacterPageAndDetails
+import com.molchanov.repository.data.characters.entity.CharacterPageEntity
 import io.reactivex.rxjava3.core.Single
 
 @Dao
