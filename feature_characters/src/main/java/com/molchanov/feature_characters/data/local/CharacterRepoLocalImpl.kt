@@ -51,8 +51,6 @@ class CharacterRepoLocalImpl @Inject constructor(
 
 
     override fun saveData(data: CharacterPage, key: Int) {
-
-        //Реализовано сохранение для связного списка
         data.characterList.forEach { char ->
 
             dbExist.getCharacterEpisodeDB().getDAO().insertCharacter(

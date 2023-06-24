@@ -42,7 +42,7 @@ class CharactersViewModel @Inject constructor(
 
     //Запрос с поиском по слову
     override fun searchData(searchWord: String) {
-        /*liveData.postValue(CharactersAppState.Loading(true))
+        liveData.postValue(CharactersAppState.Loading(true))
 
         disposable = repo.getSearchedData(lastPageActual, searchWord)
             .subscribeOn(Schedulers.io())
@@ -53,11 +53,11 @@ class CharactersViewModel @Inject constructor(
                 {
                     endLoading(CharactersAppState.Error("No data in DataBase"))
                 }
-            )*/
+            )
     }
 
     //Запрос с фильтрацией по признакам
-    /*fun getFilteredData(data: CharacterFilterData) {
+    fun getFilteredData(data: CharacterFilterData) {
         liveData.postValue(CharactersAppState.Loading(true))
 
         disposable = repo.getFilteredData(data)
@@ -70,7 +70,7 @@ class CharactersViewModel @Inject constructor(
                     endLoading(CharactersAppState.Error("No data in DataBase"))
                 }
             )
-    }*/
+    }
 
     //Костыль для того, чтобы одновременно посланные команды не перетерали друг друга
     private fun endLoading(state: CharactersAppState) {
