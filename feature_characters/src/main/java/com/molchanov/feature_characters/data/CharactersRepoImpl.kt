@@ -98,8 +98,8 @@ class CharactersRepoImpl @Inject constructor(
 
     override fun getFilteredData(filter: CharacterFilterData): Single<CharactersAppState> {
 
-        /*return when (networkStatusResult) {
-            true -> {*/
+        return when (networkStatusResult) {
+            true -> {
                 return repoRemote.getFilteredData(lastPageActual, filter)
                     .subscribeOn(Schedulers.io())
                     .flatMap {
@@ -110,15 +110,15 @@ class CharactersRepoImpl @Inject constructor(
                     .doOnError {
                         //reserveFilteredRequest(filter)
                     }
-            /*}
+            }
             else -> {
                 reserveFilteredRequest(filter)
             }
-        }*/
+        }
     }
 
     //Резервный запрос в БД с фильтрацией по признакам
-    /*private fun reserveFilteredRequest(data: CharacterFilterData): Single<CharactersAppState> {
+    private fun reserveFilteredRequest(data: CharacterFilterData): Single<CharactersAppState> {
         return repoLocal.getFilteredData(lastPageActual, data)
             .subscribeOn(Schedulers.io())
             .flatMap {
@@ -126,5 +126,5 @@ class CharactersRepoImpl @Inject constructor(
                     emmiter.onSuccess(CharactersAppState.Success(it))
                 }
             }
-    }*/
+    }
 }

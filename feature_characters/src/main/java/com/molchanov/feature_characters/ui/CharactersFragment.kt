@@ -13,6 +13,7 @@ import com.molchanov.coreui.utils.vision
 import com.molchanov.feature_characters.data.CharacterFilterData
 import com.molchanov.feature_characters.di.CharactersComponent
 import com.molchanov.feature_characters.domain.Character
+import com.molchanov.feature_characters.ui.filter.CharactersFilterDialogFragment
 
 
 class CharactersFragment :
@@ -127,7 +128,7 @@ class CharactersFragment :
     }
 
     private fun initButtonFilter() {
-        /*binding.abBaseIcFilter.setOnClickListener {
+        binding.abBaseIcFilter.setOnClickListener {
             //Создаём диологовое окно
             val charactersFilterDialogFragment = CharactersFilterDialogFragment.instance
 
@@ -144,7 +145,7 @@ class CharactersFragment :
                 parentFragmentManager,
                 SearchDialogFragment.FRAGMENT_TAG
             )
-        }*/
+        }
     }
 
     override fun renderData(state: CharactersAppState) {
