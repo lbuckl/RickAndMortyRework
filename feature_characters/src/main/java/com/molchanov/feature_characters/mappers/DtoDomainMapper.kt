@@ -3,8 +3,7 @@ package com.molchanov.repository.utils
 import com.molchanov.core.utils.findWordInText
 import com.molchanov.feature_characters.data.remote.dto.CharacterDetails
 import com.molchanov.feature_characters.data.remote.dto.CharacterDto
-import com.molchanov.feature_characters.domain.Character
-import com.molchanov.feature_characters.domain.CharacterPage
+import com.molchanov.domain.characters.*
 import javax.inject.Inject
 
 class DtoDomainMapper @Inject constructor() {

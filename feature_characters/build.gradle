@@ -68,5 +68,6 @@ dependencies {
 
     implementation project(':core')
     implementation project(':coreui')
+    implementation project(':domain')
     implementation project(':repository')
 }

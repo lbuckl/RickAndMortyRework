@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.molchanov.feature_characters.databinding.FragmentCharactersRvItemBinding
-import com.molchanov.feature_characters.domain.Character
+import com.molchanov.domain.characters.*
 
 /**
  * Адаптер для отображения и взаимодействия персонажей

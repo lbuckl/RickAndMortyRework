@@ -4,7 +4,7 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.molchanov.coreui.utils.loadImageFromUrl
 import com.molchanov.feature_characters.databinding.FragmentCharactersRvItemBinding
-import com.molchanov.feature_characters.domain.Character
+import com.molchanov.domain.characters.*
 
 
 abstract class CharactersBaseViewHolder(view: View) : RecyclerView.ViewHolder(view) {

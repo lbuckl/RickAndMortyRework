@@ -4,8 +4,7 @@ import com.molchanov.core.domain.repository.IRepository
 import com.molchanov.coreui.utils.APP_STATE_DELAY
 import com.molchanov.coreui.viewmodel.BaseViewModel
 import com.molchanov.feature_characters.data.CharacterFilterData
-import com.molchanov.feature_characters.domain.Character
-import com.molchanov.feature_characters.domain.CharacterPage
+import com.molchanov.domain.characters.*
 import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.rxjava3.schedulers.Schedulers
 import javax.inject.Inject

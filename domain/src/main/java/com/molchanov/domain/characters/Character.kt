@@ -1,11 +1,8 @@
-package com.molchanov.feature_characters.domain
+package com.molchanov.domain.characters
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
-/**
- * Класс хранящий данные о персонажах
- */
 @Parcelize
 data class Character(
     val id: Int,

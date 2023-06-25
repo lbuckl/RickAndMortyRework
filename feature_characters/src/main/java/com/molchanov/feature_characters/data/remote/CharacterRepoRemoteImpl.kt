@@ -1,8 +1,9 @@
 package com.molchanov.feature_characters.data.remote
 
 import com.molchanov.core.domain.repository.requests.IRemoteRequest
+import com.molchanov.domain.*
+import com.molchanov.domain.characters.CharacterPage
 import com.molchanov.feature_characters.data.CharacterFilterData
-import com.molchanov.feature_characters.domain.*
 import com.molchanov.repository.utils.DtoDomainMapper
 import io.reactivex.rxjava3.core.Single
 import javax.inject.Inject

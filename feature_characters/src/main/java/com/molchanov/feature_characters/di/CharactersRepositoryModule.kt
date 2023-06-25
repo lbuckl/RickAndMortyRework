@@ -3,11 +3,11 @@ package com.molchanov.feature_characters.di
 import com.molchanov.core.domain.repository.IRepository
 import com.molchanov.core.domain.repository.requests.ILocalRequest
 import com.molchanov.core.domain.repository.requests.IRemoteRequest
+import com.molchanov.domain.characters.CharacterPage
 import com.molchanov.feature_characters.data.CharacterFilterData
 import com.molchanov.feature_characters.data.CharactersRepoImpl
 import com.molchanov.feature_characters.data.local.CharacterRepoLocalImpl
 import com.molchanov.feature_characters.data.remote.CharacterRepoRemoteImpl
-import com.molchanov.feature_characters.domain.CharacterPage
 import com.molchanov.feature_characters.ui.CharactersAppState
 import dagger.Binds
 import dagger.Module

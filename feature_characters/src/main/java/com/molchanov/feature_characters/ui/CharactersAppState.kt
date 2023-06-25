@@ -1,8 +1,7 @@
 package com.molchanov.feature_characters.ui
 
 import com.molchanov.core.domain.viewmodel.AppState
-import com.molchanov.feature_characters.domain.Character
-import com.molchanov.feature_characters.domain.CharacterPage
+import com.molchanov.domain.characters.*
 
 sealed class CharactersAppState: AppState() {
 

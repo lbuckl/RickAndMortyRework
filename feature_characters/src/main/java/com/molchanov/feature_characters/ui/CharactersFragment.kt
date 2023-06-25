@@ -12,7 +12,7 @@ import com.molchanov.coreui.search.SearchDialogFragment
 import com.molchanov.coreui.utils.vision
 import com.molchanov.feature_characters.data.CharacterFilterData
 import com.molchanov.feature_characters.di.CharactersComponent
-import com.molchanov.feature_characters.domain.Character
+import com.molchanov.domain.characters.*
 import com.molchanov.feature_characters.ui.filter.CharactersFilterDialogFragment
 
 
