@@ -1,4 +1,4 @@
-package com.molchanov.feature_episodes.data.dto
+package com.molchanov.feature_episodes.data.remote.dto
 
 
 import com.google.gson.annotations.SerializedName

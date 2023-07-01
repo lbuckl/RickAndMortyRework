@@ -9,24 +9,23 @@ import com.molchanov.repository.data.characters.CharactersDbBuilder
 import io.reactivex.rxjava3.core.Single
 import javax.inject.Inject
 
-/**
- * Класс реализующий взаимодействие с БД персонажей
- */
 class CharacterRepoLocalImpl @Inject constructor(
     private val dbExist: CharactersDbBuilder,
     private val mapper: DaoDomainMapper
 ) : ILocalRequest<Int, CharacterFilterData, String, CharacterPage> {
 
+    private val dataBase = dbExist.getCharacterDB()
+
     //Функция получения данных по тегу "Страница"
     override fun getData(requestData: Int): Single<CharacterPage> {
-        return dbExist.getCharacterEpisodeDB().getDAO().queryPageAndEpisodes(requestData)
+        return dataBase.getDAO().queryPageAndEpisodes(requestData)
             .map { data ->
                 mapper.daoCharacterAndEpisodesToDomain(data)
             }
     }
 
     override fun getSearchedData(requestData: Int, searchWord: String): Single<CharacterPage> {
-        return dbExist.getCharacterEpisodeDB().getDAO().queryPageAndEpisodes(requestData)
+        return dataBase.getDAO().queryPageAndEpisodes(requestData)
             .map { data ->
                 mapper.daoCharacterAndEpisodesToDomainSearch(data, searchWord)
             }
@@ -39,7 +38,7 @@ class CharacterRepoLocalImpl @Inject constructor(
 
         val request = filter.getRoomFormat()
 
-        return dbExist.getCharacterEpisodeDB().getDAO().queryFilteredPageAndEpisodes(
+        return dataBase.getDAO().queryFilteredPageAndEpisodes(
             request.name!!,
             request.status!!,
             request.species!!,
@@ -53,11 +52,11 @@ class CharacterRepoLocalImpl @Inject constructor(
     override fun saveData(data: CharacterPage, key: Int) {
         data.characterList.forEach { char ->
 
-            dbExist.getCharacterEpisodeDB().getDAO().insertCharacter(
+            dataBase.getDAO().insertCharacter(
                 mapper.characterDomainToDao(char, data.pageActual, data.pageNum)
             )
 
-            dbExist.getCharacterEpisodeDB().getDAO().insertCharacterDetails(
+            dataBase.getDAO().insertCharacterDetails(
                 mapper.characterDetailsDomainToDao(char)
             )
         }

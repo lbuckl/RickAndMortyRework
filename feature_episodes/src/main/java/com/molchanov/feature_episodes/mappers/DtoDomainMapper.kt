@@ -3,8 +3,8 @@ package com.molchanov.feature_episodes.mappers
 import com.molchanov.core.utils.findWordInText
 import com.molchanov.domain.episodes.Episode
 import com.molchanov.domain.episodes.EpisodePage
-import com.molchanov.feature_episodes.data.dto.EpisodeDetails
-import com.molchanov.feature_episodes.data.dto.EpisodesDto
+import com.molchanov.feature_episodes.data.remote.dto.EpisodeDetails
+import com.molchanov.feature_episodes.data.remote.dto.EpisodesDto
 import javax.inject.Inject
 
 class DtoDomainMapper @Inject constructor() {

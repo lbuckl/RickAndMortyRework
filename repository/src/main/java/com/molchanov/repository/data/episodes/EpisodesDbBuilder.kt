@@ -6,10 +6,10 @@ import javax.inject.Inject
 
 class EpisodesDbBuilder @Inject constructor(private val context: Context) {
 
-    private val characterEpisodeDB: EpisodeDB? = null
+    private val episodeDB: EpisodeDB? = null
 
-    fun getCharacterEpisodeDB(): EpisodeDB {
-        return characterEpisodeDB ?:
+    fun getEpisodeDB(): EpisodeDB {
+        return episodeDB ?:
             Room.databaseBuilder(
                 context,
                 EpisodeDB::class.java,

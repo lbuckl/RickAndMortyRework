@@ -1,4 +1,4 @@
-package com.molchanov.feature_episodes.mappers
+package com.molchanov.feature_episodes.data
 
 import com.molchanov.core.domain.filter.BaseFilterData
 
